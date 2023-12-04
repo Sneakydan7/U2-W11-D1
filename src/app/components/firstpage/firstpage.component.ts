@@ -34,7 +34,9 @@ export class FirstpageComponent implements OnInit {
     console.log(this.cartlist);
   }
 
-  showOnFaves(product: Products) {
+  showOnFaves(product: Products, e: Event) {
     this.srv.getFavourites(product);
+    let button = e.currentTarget as HTMLButtonElement;
+    button.disabled = true;
   }
 }

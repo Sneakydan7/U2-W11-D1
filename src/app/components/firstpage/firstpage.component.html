@@ -17,7 +17,12 @@
                 <a class="btn btn-primary" (click)="showOnCart(item)"
                   >{{ item.price }} $</a
                 >
-                <a class="btn btn-primary" (click)="showOnFaves(item)">💖</a>
+                <button
+                  class="btn btn-primary"
+                  (click)="showOnFaves(item, $event)"
+                >
+                  💖
+                </button>
               </div>
             </div>
           </div>
