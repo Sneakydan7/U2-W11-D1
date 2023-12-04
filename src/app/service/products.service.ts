@@ -7,10 +7,18 @@ import { Products, ProductResponse } from '../models/products';
 })
 export class ProductsService {
   url: string = 'https://dummyjson.com/products';
-
+  prefList: Products[] = [];
   constructor(private http: HttpClient) {}
 
   getProducts() {
     return this.http.get<ProductResponse>(this.url);
+  }
+
+  getFavourites(product: Products) {
+    this.prefList.push(product);
+  }
+
+  getPrefList() {
+    return this.prefList;
   }
 }

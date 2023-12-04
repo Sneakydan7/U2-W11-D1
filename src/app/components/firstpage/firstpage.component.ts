@@ -34,5 +34,7 @@ export class FirstpageComponent implements OnInit {
     console.log(this.cartlist);
   }
 
-  showOnFaves(product: Products) {}
+  showOnFaves(product: Products) {
+    this.srv.getFavourites(product);
+  }
 }
