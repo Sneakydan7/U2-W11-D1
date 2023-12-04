@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div *ngFor="let item of list" class="col-4">
+          <div class="card h-100 my-2">
+            <img
+              src="{{ item.thumbnail }}"
+              class="card-img-top object-fit-cover"
+              alt="..."
+              style="height: 200px"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}</h5>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <a class="btn btn-primary" (click)="showOnCart(item)"
+                  >{{ item.price }} $</a
+                >
+                <a class="btn btn-primary">💖</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 text-center">
+      <h3>Your Cart</h3>
+      <div *ngFor="let product of cartlist">
+        <div class="card">
+          <div class="card-header">
+            {{ product.title }}
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>{{ product.rating }} ⭐</p>
+              <footer class="blockquote-footer">
+                <cite title="Source Title">{{ product.price }}$</cite>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

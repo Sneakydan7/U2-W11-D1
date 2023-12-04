@@ -1,0 +1,15 @@
+<div *ngFor="let product of favourites">
+  <div class="card">
+    <div class="card-header">
+      {{ product.title }}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ product.rating }} ⭐</p>
+        <footer class="blockquote-footer">
+          <cite title="Source Title">{{ product.price }}$</cite>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</div>
